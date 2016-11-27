@@ -1,9 +1,10 @@
 {
   "name": "my-react-webpack-boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "react-webpack-boilerplate",
-  "main": "index.js",
   "scripts": {
+    "dev": "babel-node ./buildConfig/dev-server",
+    "build": "webpack --config ./buildConfig/webpack.config.release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -11,5 +12,25 @@
     "webpack"
   ],
   "author": "Tuber",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "compression-webpack-plugin": "^0.3.2",
+    "html-webpack-plugin": "^2.24.1",
+    "imagemin-webpack-plugin": "^1.4.4",
+    "webpack": "^2.1.0-beta.27",
+    "webpack-browser-plugin": "^1.0.12",
+    "webpack-dev-server": "^2.1.0-beta.12"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0"
+  }
 }
