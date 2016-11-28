@@ -3,12 +3,17 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
+import {Router, Route, browserHistory} from 'react-router';
 import reducers from './reducers';
-import Router from './router.jsx';
+import App from './app.jsx';
 
 render(
     <Provider store={createStore(reducers)}>
-        <Router></Router>
+        <Router history={browserHistory}>
+            <Route path="/" component={App}>
+
+            </Route>
+        </Router>
     </Provider>,
     document.getElementById('root')
 );
