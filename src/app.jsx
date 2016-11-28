@@ -1,6 +1,7 @@
 'use strict';
 import React from 'react';
 
-export default ()=>(
+const App = ()=>(
     <div>Hello World</div>
-)
+);
+export default App;
