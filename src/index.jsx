@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import {Router, Route, browserHistory} from 'react-router';
 import reducers from './reducers';
-import App from './app.jsx';
+import App from './app';
 
 render(
     <Provider store={createStore(reducers)}>

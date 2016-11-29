@@ -21,6 +21,9 @@ module.exports = {
             {test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ['babel-loader', 'eslint-loader']}
         ]
     },
+    resolve: {
+        extensions: ['.js', '.jsx', '.json']
+    },
     plugins: [
         new Webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
