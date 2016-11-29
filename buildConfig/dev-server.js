@@ -15,6 +15,12 @@ const compiler = Webpack({
             ...webpackConfigBase.entry.app
         ]
     },
+    module: {
+        loaders: [
+            ...webpackConfigBase.module.loaders,
+            {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']}
+        ]
+    },
     plugins: [
         new Webpack.HotModuleReplacementPlugin(),
         new WebpackBrowserPlugin({
