@@ -33,7 +33,7 @@ module.exports = {
             title: 'Welcome',
             template: resolvePath('src/index.ejs'),
             inject: true,
-            favicon: '',
+            favicon: resolvePath('src/res/favicon.png'),
             hash: true
         })
     ]
