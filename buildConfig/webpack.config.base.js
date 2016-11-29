@@ -1,7 +1,6 @@
 'use strict';
 const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const config = require('./config');
 const Path = require('path');
 
 const resolvePath = function (relativePath) {
