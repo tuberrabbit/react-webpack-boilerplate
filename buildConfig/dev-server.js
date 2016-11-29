@@ -17,21 +17,16 @@ const compiler = Webpack({
     },
     module: {
         loaders: [
-            ...webpackConfigBase.module.loaders,
-            {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']}
+            {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
+            ...webpackConfigBase.module.loaders
         ]
     },
     plugins: [
         new Webpack.HotModuleReplacementPlugin(),
-        new WebpackBrowserPlugin({
-            browser: 'Chrome',
-            port: config.port
-        }),
+        new Webpack.SourceMapDevToolPlugin({test: /\.(js|jsx)$/, exclude: /node_modules/}),
+        new WebpackBrowserPlugin({browser: 'Chrome', port: config.port}),
         ...webpackConfigBase.plugins
     ]
 });
-const server = new WebpackDevServer(compiler, {
-    hot: true,
-    stats: 'minimal'
-});
+const server = new WebpackDevServer(compiler, {hot: true, stats: 'minimal'});
 server.listen(config.port);
