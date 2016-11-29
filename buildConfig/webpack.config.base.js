@@ -27,7 +27,7 @@ module.exports = {
             minChunks: 2
         }),
         new HtmlWebpackPlugin({
-            title: 'react-boilerplate',
+            title: 'Welcome',
             template: resolvePath('src/index.ejs'),
             inject: true,
             favicon: '',
