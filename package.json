@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "babel-node ./buildConfig/dev-server",
     "build": "webpack --config ./buildConfig/webpack.config.release",
+    "server": "babel-node ./src/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -25,6 +26,7 @@
     "eslint": "^3.11.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.7.1",
+    "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "html-webpack-plugin": "^2.24.1",
     "imagemin-webpack-plugin": "^1.4.4",
@@ -40,6 +42,7 @@
     "react-dom": "^15.4.1",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "whatwg-fetch": "^2.0.1"
   }
 }
