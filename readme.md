@@ -8,5 +8,6 @@
 ## Commands
 ### :Development
 ```npm run dev```
+```npm run server```
 ### :Production
 ```npm run build```

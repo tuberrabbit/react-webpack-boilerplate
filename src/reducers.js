@@ -1,4 +1,5 @@
 'use strict';
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
+import appReducer from './app/reducer';
 
-export default combineReducers({});
+export default combineReducers({appReducer});
