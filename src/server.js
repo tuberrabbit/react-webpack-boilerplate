@@ -31,5 +31,8 @@ server.get('/dependencies', (req, res)=> res.json([{
 }, {
     dependency: 'whatwg-fetch',
     version: '2.0.1'
+}, {
+    dependency: 'immutable',
+    version: '3.8.1'
 }]));
 server.listen(5000);
