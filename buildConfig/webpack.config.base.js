@@ -13,7 +13,7 @@ module.exports = {
         vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'redux', 'whatwg-fetch', 'immutable']
     },
     output: {
-        filename: '[name].js',
+        filename: '[name]?[hash].js',
         path: resolvePath('dist')
     },
     module: {

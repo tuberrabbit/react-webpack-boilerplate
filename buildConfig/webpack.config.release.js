@@ -12,7 +12,7 @@ webpackConfig.plugins.push(
     new Webpack.optimize.UglifyJsPlugin(),
     new ImageminPlugin(),
     new CompressionPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name]?[hash].css')
 );
 
 module.exports = webpackConfig;
