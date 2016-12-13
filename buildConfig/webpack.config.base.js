@@ -10,7 +10,7 @@ const resolvePath = function (relativePath) {
 module.exports = {
     entry: {
         app: ['./src/index.jsx'],
-        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'redux', 'whatwg-fetch']
+        vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'redux', 'whatwg-fetch', 'immutable']
     },
     output: {
         filename: '[name].js',
