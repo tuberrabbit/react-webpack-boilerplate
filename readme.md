@@ -1,13 +1,19 @@
 # My react boilerplate with webpack.
 
 ## Configuration
+
 ### Env
-- node: 6.9.1
-- npm: 4.0.3
+
+- node: 8.9.1
+- npm: 5.5.1
 
 ## Commands
+
 ### :Development
-```npm run dev```
-```npm run server```
+
+```npm start```
+
 ### :Production
+
 ```npm run build```
+```npm run server```

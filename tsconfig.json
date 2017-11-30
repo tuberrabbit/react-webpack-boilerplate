@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "moduleResolution": "Node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "pretty": true,
+    "suppressExcessPropertyErrors": true,
+    "outDir": "dist_ts/",
+    "baseUrl": "src/",
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "React",
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "compileOnSave": true
+}
