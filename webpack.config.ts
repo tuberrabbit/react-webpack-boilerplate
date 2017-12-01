@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 import * as UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
@@ -22,10 +23,7 @@ const moduleExtractCss = new ExtractTextPlugin({
 });
 const config = {
   entry: {
-    app: './src/index.ts', // 'react', 'react-dom', 'classnames', 'lodash', 'moment'
-    vendor: ['object-assign', 'jquery', 'dva-loading', 'crypto', 'dva',
-      'react-dnd-html5-backend', 'path-to-regexp', 'qs', 'react-collapse', 'react-countup', 'react-dnd',
-      'simditor', 'simditor-fullscreen', 'socket.io-client', 'recharts'],
+    app: './src/index.ts',
   },
   output: {
     path: targetPath,
@@ -120,6 +118,7 @@ const config = {
     new CleanWebpackPlugin(['dist']),
     moduleExtractCss,
     sourceExtractCss,
+    new LodashModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: 2,
@@ -142,7 +141,7 @@ const config = {
     new HtmlWebpackPlugin({
       title: '爬虫管理后台',
       template: path.resolve(__dirname, 'src', 'index.ejs'),
-      favicon: path.resolve(__dirname, 'src', 'assets', 'image', 'icon', 'logo@2x.png'),
+      favicon: path.resolve(__dirname, 'src', 'assets', 'favicon.ico'),
     }),
   ],
   bail: true,

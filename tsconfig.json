@@ -21,5 +21,8 @@
   "include": [
     "src/**/*"
   ],
-  "compileOnSave": true
+  "compileOnSave": true,
+  "files": [
+    "typings/index.d.ts"
+  ]
 }

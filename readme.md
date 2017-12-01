@@ -16,4 +16,11 @@
 ### :Production
 
 ```npm run build```
-```npm run server```
+
+## Dependencies(Continually updating)
+
+- react
+- dva
+- webpack
+- typescript
+- less
