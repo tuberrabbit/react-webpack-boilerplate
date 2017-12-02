@@ -1,16 +1,12 @@
-import * as webpack from 'webpack';
-import * as path from 'path';
-import * as CleanWebpackPlugin from 'clean-webpack-plugin';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
-import * as LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
-import * as UglifyJSPlugin from 'uglifyjs-webpack-plugin';
+import * as _ from 'lodash';
 import * as OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import * as path from 'path';
+import * as UglifyJSPlugin from 'uglifyjs-webpack-plugin';
+import { baseConfig, moduleRules, plugins } from './webpack.config.base';
 
 const sourcePath = path.resolve(__dirname, 'src');
 const modulePath = path.resolve(__dirname, 'node_modules');
-const targetPath = path.resolve(__dirname, 'dist');
-
 const sourceExtractCss = new ExtractTextPlugin({
   filename: 'source.[hash:8].css',
   allChunks: true,
@@ -21,55 +17,10 @@ const moduleExtractCss = new ExtractTextPlugin({
   allChunks: true,
   ignoreOrder: true,
 });
-const config = {
-  entry: {
-    app: './src/index.ts',
-  },
-  output: {
-    path: targetPath,
-    publicPath: '/',
-    filename: '[name].[hash:8].js',
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '*'],
-  },
+const config = _.assign({}, baseConfig, {
   module: {
     rules: [
-      {
-        test: /\.(png|jpg|svg|eot|ttf|woff|woff2|otf)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 1000,
-              name: 'res/[ext]/[name].[hash:8].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(js|jsx)$/,
-        include: sourcePath,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-          },
-        }],
-      },
-      {
-        test: /\.(ts|tsx)$/,
-        include: sourcePath,
-        use: [
-          {
-            loader: 'awesome-typescript-loader',
-            options: {
-              useBabel: true,
-              useCache: true,
-            },
-          },
-        ],
-      },
+      ...moduleRules,
       {
         test: /\.less$/,
         include: sourcePath,
@@ -115,36 +66,15 @@ const config = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    ...plugins,
     moduleExtractCss,
     sourceExtractCss,
-    new LodashModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: 2,
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest',
-    }),
     new OptimizeCssAssetsPlugin(),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development',
-    }),
     new UglifyJSPlugin({
       parallel: true,
       sourceMap: false,
     }),
-    new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 5,
-      minChunkSize: 1000,
-    }),
-    new HtmlWebpackPlugin({
-      title: '爬虫管理后台',
-      template: path.resolve(__dirname, 'src', 'index.ejs'),
-      favicon: path.resolve(__dirname, 'src', 'assets', 'favicon.ico'),
-    }),
   ],
-  bail: true,
-};
+});
 
 export default config;

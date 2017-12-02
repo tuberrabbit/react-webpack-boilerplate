@@ -1,22 +1,7 @@
 {
   "extends": ["tslint:latest", "tslint-react", "tslint-eslint-rules"],
   "rules": {
-    "curly": true,
-    "no-var-requires": false,
-    "ordered-imports": [false],
     "no-unused-variable": [true, "react"],
-    "no-use-before-declare": true,
-    "no-unused-expression": true,
-    "no-unused-new": true,
-    "no-console": [false],
-    "object-literal-sort-keys": false,
-    "object-literal-shorthand": false,
-    "one-variable-per-declaration": [false],
-    "no-string-literal": false,
-    "only-arrow-functions": [false],
-    "forin": false,
-    "jsx-wrap-multiline": false,
-    "no-constant-condition": true,
     "quotemark": [true, "single", "avoid-escape"],
     "trailing-comma": [
       true,
@@ -31,19 +16,14 @@
       }
     ],
     "jsx-boolean-value": false,
-    "object-literal-sort-keys": false,
-    "ordered-imports": false,
     "no-console": [true, "debug"],
     "arrow-parens": [true, "ban-single-arg-parens"],
-    "jsx-no-multiline-js": false,
-    "member-access": false,
+    "member-access": [true, "no-public"],
+    "object-literal-sort-keys": false,
     "align": [true, "statements", "members"],
     "no-shadowed-variable": false,
     "no-namespace": [true, "allow-declarations"],
     "no-submodule-imports": false,
-    "no-implicit-dependencies": [true, "dev"]
-  },
-  "jsRules": {
-    "curly": true
+    "no-implicit-dependencies": false
   }
 }

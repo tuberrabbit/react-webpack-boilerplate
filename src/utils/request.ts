@@ -1,4 +1,5 @@
 import fetch from 'dva/fetch';
+import config from '../config';
 
 const checkStatus = res => {
   if (res.ok) {
@@ -10,7 +11,7 @@ const checkStatus = res => {
 };
 
 const request = async (url, opts = {}) => {
-  const res = await fetch(url, opts);
+  const res = await fetch(`${config.host}${url}`, opts);
   checkStatus(res);
   return res.json();
 };

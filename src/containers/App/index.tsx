@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { connect } from 'dva';
+import * as React from 'react';
 import styles from './style.less';
 
 class App extends React.Component<any, any> {

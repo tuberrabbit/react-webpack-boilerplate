@@ -1,11 +1,13 @@
 import dva from 'dva';
-import * as _ from 'lodash-es';
-import { browserHistory } from 'dva/router';
 import createLoading from 'dva-loading';
+import { browserHistory } from 'dva/router';
+import * as _ from 'lodash-es';
 import Promise from 'promise-polyfill';
-import { registerModel } from './utils';
-import router from './router';
 import appModel from './containers/App/model';
+import router from './router';
+import { registerModel } from './utils';
+
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 if (typeof window !== 'undefined') {
   if (!_.isFunction(_.get(window, 'Promise'))) {
