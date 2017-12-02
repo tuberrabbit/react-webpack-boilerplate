@@ -9,6 +9,7 @@ const targetPath = path.resolve(__dirname, 'dist');
 export const baseConfig = {
   entry: {
     app: './src/index.ts',
+    vendor: ['promise-polyfill', 'react', 'dva', 'dva-loading', 'react-dom'],
   },
   output: {
     path: targetPath,
@@ -71,10 +72,11 @@ export const plugins = [
   new LodashModuleReplacementPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
-    minChunks: 2,
+    chunks: ['app', 'vendor'],
   }),
   new webpack.optimize.CommonsChunkPlugin({
     name: 'manifest',
+    minChunks: Infinity,
   }),
   new webpack.EnvironmentPlugin({
     NODE_ENV: 'development',
