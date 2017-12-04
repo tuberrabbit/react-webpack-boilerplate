@@ -9,7 +9,7 @@ const targetPath = path.resolve(__dirname, 'dist');
 export const baseConfig = {
   entry: {
     app: './src/index.ts',
-    vendor: ['promise-polyfill', 'react', 'dva', 'dva-loading', 'react-dom'],
+    vendor: ['promise-polyfill', 'react', 'dva', 'dva-loading'],
   },
   output: {
     path: targetPath,
