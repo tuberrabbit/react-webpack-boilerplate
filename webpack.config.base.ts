@@ -31,7 +31,7 @@ export const baseConfig = {
 
 export const moduleRules = [
   {
-    test: /\.(png|jpg|svg|eot|ttf|woff|woff2|otf)$/,
+    test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|otf)$/,
     use: [
       {
         loader: 'url-loader',
