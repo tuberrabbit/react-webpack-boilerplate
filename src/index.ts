@@ -1,11 +1,11 @@
 import dva from 'dva';
 import createLoading from 'dva-loading';
-import { browserHistory } from 'dva/router';
 import * as _ from 'lodash-es';
 import Promise from 'promise-polyfill';
 import appModel from './containers/App/model';
 import router from './router';
 import { registerModel } from './utils';
+import history from './utils/history';
 
 console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
@@ -15,9 +15,7 @@ if (typeof window !== 'undefined') {
   }
 }
 
-const app = dva({
-  history: browserHistory,
-});
+const app = dva({ history });
 
 // register your hooks here
 app.use(createLoading());
