@@ -71,8 +71,10 @@ const config = _.assign({}, baseConfig, {
     sourceExtractCss,
     new OptimizeCssAssetsPlugin(),
     new UglifyJSPlugin({
+      cache: true,
       parallel: true,
       sourceMap: false,
+      extractComments: false,
     }),
   ],
 });

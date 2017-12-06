@@ -89,5 +89,10 @@ export const plugins = [
     title: 'My boilerplate',
     template: path.resolve(__dirname, 'src', 'index.ejs'),
     favicon: path.resolve(__dirname, 'src', 'assets', 'favicon.ico'),
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: false,
+    },
   }),
 ];
