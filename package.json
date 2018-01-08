@@ -62,6 +62,7 @@
     "dva-loading": "1.0.4",
     "history": "4.7.2",
     "lodash-es": "4.17.4",
+    "normalize.css": "7.0.0",
     "promise-polyfill": "6.1.0",
     "react": "15.6.2",
     "react-dom": "15.6.2"
