@@ -1,4 +1,4 @@
-import * as _ from 'lodash-es';
+import * as _ from 'lodash';
 import Promise from 'promise-polyfill';
 import { isBrowser } from './browser';
 
