@@ -1,3 +1,4 @@
+import 'raf/polyfill';
 import dva from 'dva';
 import createLoading from 'dva-loading';
 import appModel from './containers/App/model';

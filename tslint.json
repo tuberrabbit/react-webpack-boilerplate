@@ -24,6 +24,7 @@
     "no-shadowed-variable": false,
     "no-namespace": [true, "allow-declarations"],
     "no-submodule-imports": false,
-    "no-implicit-dependencies": false
+    "no-implicit-dependencies": false,
+    "ordered-imports": false
   }
 }
