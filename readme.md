@@ -20,6 +20,7 @@
 ## Dependencies(Continually updating)
 
 - react
+- react-loadable // dynamic import components, auto-split code
 - dva
 - webpack
 - typescript

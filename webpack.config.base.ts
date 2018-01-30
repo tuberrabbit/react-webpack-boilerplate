@@ -9,12 +9,12 @@ const targetPath = path.resolve(__dirname, 'dist');
 export const baseConfig = {
   entry: {
     app: './src/index.ts',
-    vendor: ['promise-polyfill', 'react', 'dva', 'dva-loading', 'react-dom'],
   },
   output: {
     path: targetPath,
     publicPath: '/',
     filename: '[name].[hash:8].js',
+    chunkFilename: '[name].[hash:8].js',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '*'],
@@ -70,20 +70,8 @@ export const moduleRules = [
 export const plugins = [
   new CleanWebpackPlugin(['dist']),
   new LodashModuleReplacementPlugin(),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    chunks: ['app', 'vendor'],
-  }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'manifest',
-    minChunks: Infinity,
-  }),
   new webpack.EnvironmentPlugin({
     NODE_ENV: 'development',
-  }),
-  new webpack.optimize.LimitChunkCountPlugin({
-    maxChunks: 5,
-    minChunkSize: 1000,
   }),
   new HtmlWebpackPlugin({
     title: 'My boilerplate',
