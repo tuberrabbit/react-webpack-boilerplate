@@ -69,7 +69,9 @@ export const moduleRules = [
 
 export const plugins = [
   new CleanWebpackPlugin(['dist']),
-  new LodashModuleReplacementPlugin(),
+  new LodashModuleReplacementPlugin({
+    paths: true
+  }),
   new webpack.EnvironmentPlugin({
     NODE_ENV: 'development',
   }),
