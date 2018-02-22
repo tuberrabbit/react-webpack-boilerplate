@@ -19,3 +19,7 @@ registerModel(app, appModel);
 app.router(router);
 
 app.start('#root');
+
+if (module.hot) {
+  module.hot.accept();
+}

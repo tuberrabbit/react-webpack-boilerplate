@@ -48,6 +48,7 @@ const config = _.assign({}, baseConfig, {
   },
   plugins: [
     ...plugins,
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
 });
